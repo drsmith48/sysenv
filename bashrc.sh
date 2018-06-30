@@ -17,7 +17,7 @@ echo "  LD_LIBRARY_PATH:  $LD_LIBRARY_PATH"
 export PS1='[\w] \$ '
 export PROMPT_DIRTRIM=3
 
-alias ..='cd ..'alias ...='cd ../..'alias ....='cd ../../..'alias ls='ls -F --color=auto'
+#alias ..='cd ..'#alias ...='cd ../..'#alias ....='cd ../../..'alias ls='ls -F --color=auto'
 alias ll='ls -Fl --color=auto'
 alias la='ls -Fal --color=auto'
 alias lt='ls -Flt --color=auto'
