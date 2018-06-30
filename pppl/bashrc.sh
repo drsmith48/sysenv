@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # PPPL configuration
 
 echo "loading ~/sysenv/pppl/bashrc.sh"
