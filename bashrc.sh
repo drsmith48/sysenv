@@ -6,7 +6,7 @@
 # return if non-interactive
 [[ -z $PS1 ]] && return
 
-echo "start bashrc.sh"
+echo "start ~/sysenv/bashrc.sh"
 echo "  HOSTNAME: $HOSTNAME"
 echo "  SHELL: $0"
 echo "  OS: $OS"
@@ -38,5 +38,5 @@ alias modsw='module switch'
 # load system-specific settings
 source $SYSENVHOME/bashrc.sh
 
-echo "end bashrc.sh"
+echo "end ~/sysenv/bashrc.sh"
 module -l list

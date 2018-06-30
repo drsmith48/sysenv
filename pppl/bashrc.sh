@@ -1,4 +1,7 @@
 # PPPL configuration
+
+echo "loading ~/sysenv/pppl/bashrc.sh"
+
 alias sidle='sinfo --state=idle --long --Node --partition=dawson,kruskal,ellis,mque ; sinfo -s --partition=dawson,kruskal,ellis,mque'
 alias dawson='squeue --partition=dawson -o"%.8i %.10P %.6D %.6C %.12j %.8u %.8T %.11M %.11l" ; sinfo -s --partition=dawson'
 alias ellis='squeue --partition=ellis -o"%.8i %.10P %.6D %.6C %.12j %.8u %.8T %.11M %.11l" ; sinfo -s --partition=ellis'

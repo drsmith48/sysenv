@@ -3,6 +3,9 @@
 # non-login shells inheret environment variables
 # interactive login shells should source ~/.bashrc
 
+# for interactive shell
+[[ -n $PS1 ]] && echo "loading ~/sysenv/bash_profile.sh"
+
 export LANG=en_US.utf8
 export OS=$(lsb_release -ds)
 
@@ -17,9 +20,6 @@ esac
 export MODULEPATH=$SYSENVHOME/modules:$MODULEPATH
 module load startup
 
-if [[ -n $PS1 ]]; then
-  # interactive shell
-  echo "loading bash_profile.sh"
-  [[ -r $HOME/.bashrc ]] && source $HOME/.bashrc
-  eval ssh-agent bash --norc
-fi
+[[ -n $PS1 ]] && [[ -r $HOME/.bashrc ]] && source $HOME/.bashrc
+
+eval ssh-agent bash --norc
