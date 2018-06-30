@@ -4,16 +4,17 @@
 # interactive login shells should source ~/.bashrc
 
 export LANG=en_US.utf8
-export MODULEPATH=$HOME/shell/modules:$MODULEPATH
 export OS=$(lsb_release -ds)
 
 case $HOSTNAME in
-  (*sunfire*|*kruskal*|*dawson*|*mque*)
-    export HPCSYSTEM=pppl ;;
+  (*sunfire*|*kruskal*|*dawson*|*ganesh*)
+    export SYSENVHOME=$HOME/sysenv/pppl ;;
   (*cori*)
-    export HPCSYSTEM=cori ;;
+    export SYSENVHOME=$HOME/sysenv/cori ;;
 esac
 
+# load system-specific default module file
+export MODULEPATH=$SYSENVHOME/modules:$MODULEPATH
 module load startup
 
 if [[ -n $PS1 ]]; then
