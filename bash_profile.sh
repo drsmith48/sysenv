@@ -22,4 +22,3 @@ module load startup
 
 # load .bashrc
 [[ -n $PS1 ]] && [[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
-export BASH_ENV=$HOME/.bashrc

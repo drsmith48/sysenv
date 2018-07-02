@@ -17,7 +17,7 @@ echo "  LD_LIBRARY_PATH:  $LD_LIBRARY_PATH"
 export PS1='[\w] \$ '
 export PROMPT_DIRTRIM=3
 
-#alias ..='cd ..'#alias ...='cd ../..'#alias ....='cd ../../..'alias ls='ls -F --color=auto'
+alias ls='ls -F --color=auto'
 alias ll='ls -Fl --color=auto'
 alias la='ls -Fal --color=auto'
 alias lt='ls -Flt --color=auto'
@@ -28,8 +28,10 @@ function rec {
   ls -FClt --color=auto $1 | head -n15
 }
 
-alias edit='gedit'
 alias xt='xterm -bg black -fg white &'
+function edit {
+  gedit $@ &
+}
 
 alias modav='module -l avail'
 alias modls='module -l list'
@@ -37,6 +39,8 @@ alias modsh='module show'
 alias modld='module load'
 alias modunld='module unload'
 alias modsw='module switch'
+
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
 # load system-specific settings
 source $SYSENVHOME/bashrc.sh
