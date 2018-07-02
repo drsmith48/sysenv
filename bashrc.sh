@@ -6,6 +6,8 @@
 # return if non-interactive
 [[ -z $PS1 ]] && return
 
+umask 022
+
 echo "start ~/sysenv/bashrc.sh"
 echo "  HOSTNAME: $HOSTNAME"
 echo "  SHELL: $0"
@@ -17,6 +19,7 @@ echo "  LD_LIBRARY_PATH:  $LD_LIBRARY_PATH"
 export PS1='[\w] \$ '
 export PROMPT_DIRTRIM=3
 
+# file utilities
 alias ls='ls -F --color=auto'
 alias ll='ls -Fl --color=auto'
 alias la='ls -Fal --color=auto'
@@ -27,12 +30,12 @@ alias h='history 15'
 function rec {
   ls -FClt --color=auto $1 | head -n15
 }
-
 alias xt='xterm -bg black -fg white &'
 function edit {
   gedit $@ &
 }
 
+# module utilities
 alias modav='module -l avail'
 alias modls='module -l list'
 alias modsh='module show'
@@ -41,6 +44,19 @@ alias modunld='module unload'
 alias modsw='module switch'
 
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+
+# SLURM utilities
+outputformat='%.8i %.10P %.6D %.6C %.12j %.8u %.8T %.11M %.11l'
+alias sidle="sinfo -s --state=idle"
+function snode {
+  sinfo -l --Node --state=idle -p $1
+}
+function sq {
+  squeue -o"${outputformat}" -p $1
+}
+alias sinteractive='salloc -t 8:00:00 --mem-per-cpu=2000M -N 1'
+alias sme='squeue -o"${outputformat}" -u${USER}'
+alias sjob='scontrol show jobid -d'
 
 # load system-specific settings
 source $SYSENVHOME/bashrc.sh

@@ -1,6 +1,6 @@
-# PPPL configuration
+# Cori configuration
 
-echo "loading ~/sysenv/pppl/bashrc.sh"
+echo "loading ~/sysenv/cori/bashrc.sh"
 
 export $(dbus-launch)
 unset QTDIR
