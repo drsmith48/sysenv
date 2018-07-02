@@ -45,7 +45,5 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 # load system-specific settings
 source $SYSENVHOME/bashrc.sh
 
-#eval ssh-agent bash --norc
-
 echo "end ~/sysenv/bashrc.sh"
 module -l list

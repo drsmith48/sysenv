@@ -16,9 +16,15 @@ case $HOSTNAME in
     export SYSENVHOME=$HOME/sysenv/cori ;;
 esac
 
+export HISTSIZE="100"
+export HISTFILESIZE="200"
+export HISTCONTROL="ignoreboth"
+
 # load system-specific default module file
 export MODULEPATH=$SYSENVHOME/modules:$MODULEPATH
 module load startup
 
 # load .bashrc
 [[ -n $PS1 ]] && [[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
+
+[[ -z $SSH_AUTH_SOCK ]] && eval $(ssh-agent) > /dev/null
