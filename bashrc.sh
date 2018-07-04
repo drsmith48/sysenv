@@ -26,14 +26,20 @@ alias la='ls -Fal --color=auto'
 alias lt='ls -Flt --color=auto'
 alias l.='ls -Fd --color=auto .*'
 alias dirsize='du --max-depth=1 -h | sort -h'
-alias h='history 15'
 function rec {
   ls -FClt --color=auto $1 | head -n15
 }
+
+# program utilities
+alias h='history 15'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias xt='xterm -bg black -fg white &'
 function edit {
   gedit $@ &
 }
+
+# node utilities
+alias nodeinfo='lscpu | egrep -i "cpu|thread|core|model|cache|socket"'
 
 # module utilities
 alias modav='module -l avail'
@@ -42,8 +48,6 @@ alias modsh='module show'
 alias modld='module load'
 alias modunld='module unload'
 alias modsw='module switch'
-
-alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
 # SLURM utilities
 outputformat='%.8i %.10P %.6D %.6C %.12j %.8u %.8T %.11M %.11l'
