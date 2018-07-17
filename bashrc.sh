@@ -8,14 +8,6 @@
 
 umask 022
 
-echo "start ~/sysenv/bashrc.sh"
-echo "  HOSTNAME: $HOSTNAME"
-echo "  SHELL: $0"
-echo "  OS: $(lsb_release -ds)"
-echo "  PATH:  $PATH"
-echo "  PYTHONPATH:  $PYTHONPATH"
-echo "  LD_LIBRARY_PATH:  $LD_LIBRARY_PATH"
-
 export PS1='[\w] \$ '
 export PROMPT_DIRTRIM=3
 
@@ -65,5 +57,12 @@ alias sjob='scontrol show jobid -d'
 # load system-specific settings
 source $SYSENVHOME/bashrc.sh
 
+echo "start ~/sysenv/bashrc.sh"
+echo "  HOSTNAME: $HOSTNAME"
+echo "  SHELL: $0"
+echo "  OS: $(lsb_release -ds)"
+echo "  PATH:  $PATH"
+echo "  PYTHONPATH:  $PYTHONPATH"
+echo "  LD_LIBRARY_PATH:  $LD_LIBRARY_PATH"
 echo "end ~/sysenv/bashrc.sh"
 module -l list

@@ -3,7 +3,7 @@
 # non-login shells inheret environment variables
 # interactive login shells should source ~/.bashrc
 
-#export LANG=en_US.utf8
+export LANG=en_US.utf8
 
 # for interactive shell
 [[ -n $PS1 ]] && echo "loading ~/sysenv/bash_profile.sh"
@@ -14,6 +14,8 @@ case $HOSTNAME in
     export SYSENVHOME=$HOME/sysenv/pppl ;;
   (*cori*)
     export SYSENVHOME=$HOME/sysenv/cori ;;
+  (*iris*)
+    export SYSENVHOME=$HOME/sysenv/iris ;;
 esac
 
 export HISTSIZE="100"

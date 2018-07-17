@@ -1,0 +1,12 @@
+#%Module
+#
+# default modules and paths for Cori computer system
+#
+
+set HOME $::env(HOME)
+
+prepend-path PYTHONPATH ${HOME}/python
+prepend-path IDL_PATH ${HOME}/idl
+prepend-path PATH ${HOME}/local/bin
+prepend-path LD_LIBRARY_PATH ${HOME}/local/lib
+prepend-path INCLUDE_PATH ${HOME}/local/include
