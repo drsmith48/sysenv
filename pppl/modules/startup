@@ -4,7 +4,7 @@
 #
 
 set HOME $::env(HOME)
-set SYSENVHOME $::(SYSENVHOME)
+set SYSENVHOME $::env(SYSENVHOME)
 
 module load git
 module load anaconda3

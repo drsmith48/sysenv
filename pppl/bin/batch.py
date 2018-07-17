@@ -3,9 +3,9 @@
 import argparse
 
 # physical cores per node
-PCORES_NODE = 64
+PCORES_NODE = 32
 # hyperthreads
-HYPERTHREADS = 4
+HYPERTHREADS = 1
 
 # logical CPUs per node
 LCPUS_NODE = PCORES_NODE * HYPERTHREADS
