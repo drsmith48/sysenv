@@ -1,0 +1,4 @@
+#%Module
+
+module unload conda
+module load conda/omfit

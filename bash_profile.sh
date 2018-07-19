@@ -8,14 +8,16 @@ export LANG=en_US.utf8
 # for interactive shell
 [[ -n $PS1 ]] && echo "loading ~/sysenv/bash_profile.sh"
 
+export PATH="${HOME}/sysenv/bin:${PATH}"
+
 # determine HPC system
 case $HOSTNAME in
   (*sunfire*|*kruskal*|*dawson*|*ganesh*)
-    export SYSENVHOME=$HOME/sysenv/pppl ;;
+    export SYSENVHOME=${HOME}/sysenv/pppl ;;
   (*cori*)
-    export SYSENVHOME=$HOME/sysenv/cori ;;
+    export SYSENVHOME=${HOME}/sysenv/cori ;;
   (*iris*)
-    export SYSENVHOME=$HOME/sysenv/iris ;;
+    export SYSENVHOME=${HOME}/sysenv/iris ;;
 esac
 
 export HISTSIZE="100"
@@ -23,7 +25,7 @@ export HISTFILESIZE="200"
 export HISTCONTROL="ignoreboth"
 
 # load system-specific default module file
-export MODULEPATH=$SYSENVHOME/modules:$MODULEPATH
+export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
 module load startup
 
 # load .bashrc

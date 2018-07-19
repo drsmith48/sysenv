@@ -11,6 +11,8 @@ umask 022
 export PS1='[\w] \$ '
 export PROMPT_DIRTRIM=3
 
+alias pyinfo='python --version ; python -c "import sys ; import pprint ; pprint.pprint(sys.path)"'
+
 # file utilities
 alias ls='ls -F --color=auto'
 alias ll='ls -Fl --color=auto'
