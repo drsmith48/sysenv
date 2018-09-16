@@ -14,7 +14,4 @@ module load scalapack/2.0.2
 module load szip/2.1.1
 module load hdf5-parallel/1.10.2
 
-prepend-path PYTHONPATH /u/drsmith/python/gene
-prepend-path PYTHONPATH /u/drsmith/python/gene/genecode
-prepend-path PYTHONPATH /u/drsmith/python/gene/genecode/read_mom_field
-
+prepend-path PYTHONPATH ${genetop}/genecode/tools/python
