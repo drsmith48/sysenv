@@ -19,13 +19,15 @@ alias ll='ls -Fl --color=auto'
 alias la='ls -Fal --color=auto'
 alias lt='ls -Flt --color=auto'
 alias l.='ls -Fd --color=auto .*'
-alias dirsize='du --max-depth=1 -h | sort -h'
+function dirsize {
+  du --max-depth=1 --block-size=1M --time $1 | sort -nr
+}
 function rec {
   ls -FClt --color=auto $1 | head -n15
 }
 
 # program utilities
-alias h='history 15'
+alias h='history 20'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias xt='xterm -bg black -fg white &'
 function edit {

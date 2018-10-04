@@ -16,4 +16,6 @@ prepend-path LD_LIBRARY_PATH ${HOME}/local/lib
 prepend-path INCLUDE_PATH ${HOME}/local/include
 
 prepend-path PYTHONPATH ${HOME}/python
+prepend-path PYTHONPATH ${HOME}/python/pims
+
 prepend-path IDL_PATH ${HOME}/idl
