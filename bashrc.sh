@@ -19,7 +19,7 @@ alias ll='ls -l'
 alias la='ll -a'
 alias lt='ll -t'
 alias lsize='ll -s'
-alias lr='ll -R'
+alias lrecursive='ll -R'
 alias df='df -h'
 function dirsize {
   du --max-depth=1 --block-size=1M --time $1 | sort -nr
