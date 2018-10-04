@@ -14,11 +14,13 @@ export PROMPT_DIRTRIM=3
 alias pyinfo='python --version ; python -c "import sys ; import pprint ; pprint.pprint(sys.path)"'
 
 # file utilities
-alias ls='ls -F --color=auto'
-alias ll='ls -Fl --color=auto'
-alias la='ls -Fal --color=auto'
-alias lt='ls -Flt --color=auto'
-alias l.='ls -Fd --color=auto .*'
+alias ls='ls -Fh --color=auto'
+alias ll='ls -l'
+alias la='ll -a'
+alias lt='ll -t'
+alias lsize='ll -s'
+alias lr='ll -R'
+alias df='df -h'
 function dirsize {
   du --max-depth=1 --block-size=1M --time $1 | sort -nr
 }
