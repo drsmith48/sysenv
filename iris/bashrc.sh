@@ -13,4 +13,3 @@ export $(dbus-launch)
 unset QTDIR
 unset QTINC
 unset QTLIB
-
