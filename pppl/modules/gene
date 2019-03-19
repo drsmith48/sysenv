@@ -1,20 +1,29 @@
 #%Module
 
+set HOME $::env(HOME)
 set genetop /p/gene/drsmith
-setenv GENETOP ${genetop}
+
 setenv GENEHOME ${genetop}/genecode
 setenv GENEWORK ${genetop}/genecode
 setenv MACHINE pppl_intel
-setenv MEMORY_PER_CORE 1750
+setenv MEMORY_PER_CORE 1000
 
+# compiler
 module load intel/2018.u1
+set CCHOME $::env(CCHOME)
+set vtunehome ${CCHOME}/vtune_amplifier
+setenv VTUNE_HOME ${vtunehome}
+prepend-path PATH ${vtunehome}/bin64
+
+# compiler libs
+module load szip/2.1.1
 module load openmpi/3.0.0
+
+# MPI libs
+module load petsc_complex/3.9.0
 module load slepc_complex/3.9.0
 module load scalapack/2.0.2
-module load szip/2.1.1
 module load hdf5-parallel/1.10.2
 
-prepend-path PYTHONPATH /u/drsmith/python/gene
-prepend-path PYTHONPATH /u/drsmith/python/gene/genecode
-prepend-path PYTHONPATH /u/drsmith/python/gene/genecode/read_mom_field
-
+prepend-path PYTHONPATH ${genetop}/genecode/tools/python
+prepend-path PYTHONPATH ${HOME}/python/pygene

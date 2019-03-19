@@ -1,14 +1,7 @@
 #%Module
-#
-# default modules and paths for PPPL computer system
-#
 
 set HOME $::env(HOME)
 set SYSENVHOME $::env(SYSENVHOME)
-
-module load git
-module load anaconda3
-module load idl/8.7
 
 prepend-path PATH ${HOME}/local/bin
 prepend-path PATH ${SYSENVHOME}/bin
@@ -16,6 +9,4 @@ prepend-path LD_LIBRARY_PATH ${HOME}/local/lib
 prepend-path INCLUDE_PATH ${HOME}/local/include
 
 prepend-path PYTHONPATH ${HOME}/python
-prepend-path PYTHONPATH ${HOME}/python/pims
-
 prepend-path IDL_PATH ${HOME}/idl

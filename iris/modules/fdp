@@ -1,0 +1,4 @@
+#%Module
+
+set HOME $::env(HOME)
+prepend-path PYTHONPATH ${HOME}/fdp
