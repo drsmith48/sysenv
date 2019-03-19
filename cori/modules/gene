@@ -1,11 +1,25 @@
 #%Module
 
-setenv GENEHOME /global/homes/d/drsmith/common-m64/genecode
-setenv GENEWORK /global/homes/d/drsmith/project-m64
+set HOME $::env(HOME)
+set CRAY_CPU_TARGET $::env(CRAY_CPU_TARGET)
+set PE_ENV $::env(PE_ENV)
+set INTEL_VERSION $::env(INTEL_VERSION)
+
+set GENEHOME ${HOME}/common-m64/genecode
+
+module load cray-hdf5-parallel/1.10.2.0
+module load cray-fftw/3.3.8.1
+
+setenv GENEWORK ${HOME}/project-m64
+setenv GENEHOME ${GENEHOME}
+##setenv GENEEXEC ${GENEHOME}/bin/gene_cori
+setenv GENESCAN ${GENEHOME}/tools/perl/scanscript
+##setenv MEMORY_PER_CORE 3200
 setenv MACHINE cori
 setenv OMP_NUM_THREADS 1
-setenv MEMORY_PER_CORE 500
 
-module load slepc-complex-64/3.7.4
-module load cray-fftw/3.3.6.3
-module load cray-hdf5-parallel/1.10.1.1
+set VERSION 3.9.2
+setenv PETSC_ARCH arch-${CRAY_CPU_TARGET}-${PE_ENV}-${INTEL_VERSION}
+setenv PETSC_DIR ${HOME}/common-m64/packages/petsc-${VERSION}
+setenv SLEPC_DIR ${HOME}/common-m64/packages/slepc-${VERSION}
+
