@@ -12,12 +12,14 @@ export PATH="${HOME}/sysenv/bin:${PATH}"
 
 # determine HPC system
 case $HOSTNAME in
-  (*sunfire*|*kruskal*|*dawson*|*ganesh*)
-    export SYSENVHOME=${HOME}/sysenv/pppl ;;
-  (*cori*)
-    export SYSENVHOME=${HOME}/sysenv/cori ;;
-  (*iris*)
-    export SYSENVHOME=${HOME}/sysenv/iris ;;
+    (*sunfire*|*kruskal*|*dawson*|*ganesh*)
+        export SYSENVHOME=${HOME}/sysenv/pppl ;;
+    (*cori*)
+        export SYSENVHOME=${HOME}/sysenv/cori ;;
+    (*iris*)
+        export SYSENVHOME=${HOME}/sysenv/iris ;;
+    (*drsmith*)
+        export SYSENVHOME=${HOME}/sysenv/drsmith ;;
 esac
 
 export HISTSIZE="200"
@@ -25,8 +27,10 @@ export HISTFILESIZE="200"
 export HISTCONTROL="ignoreboth"
 
 # load system-specific default module file
-export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
-module load startup
+if [[ $OSTYPE == linux* ]]; then
+    export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
+    module load startup
+fi
 
 # load .bashrc
 [[ -n $PS1 ]] && [[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
