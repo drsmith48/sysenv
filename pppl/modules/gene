@@ -5,15 +5,16 @@ set genetop /p/gene/drsmith
 
 setenv GENEHOME ${genetop}/genecode
 setenv GENEWORK ${genetop}/genecode
+setenv GENEEXEC ${genetop}/genecode/bin/gene_pppl_intel
+setenv GENESCAN ${genetop}/genecode/tools/perl/scanscript
 setenv MACHINE pppl_intel
-setenv MEMORY_PER_CORE 1000
+setenv MEMORY_PER_CORE 1600
 
 # compiler
 module load intel/2018.u1
-set CCHOME $::env(CCHOME)
-set vtunehome ${CCHOME}/vtune_amplifier
-setenv VTUNE_HOME ${vtunehome}
-prepend-path PATH ${vtunehome}/bin64
+#set CCHOME $::env(CCHOME)
+#setenv VTUNE_HOME ${CCHOME}/vtune_amplifier
+#prepend-path PATH ${CCHOME}/vtune_amplifier/bin64
 
 # compiler libs
 module load szip/2.1.1
@@ -25,5 +26,8 @@ module load slepc_complex/3.9.0
 module load scalapack/2.0.2
 module load hdf5-parallel/1.10.2
 
+# tools
+module load ddt/18.2.3
+
 prepend-path PYTHONPATH ${genetop}/genecode/tools/python
-prepend-path PYTHONPATH ${HOME}/python/pygene
+prepend-path PYTHONPATH ${HOME}/pygene

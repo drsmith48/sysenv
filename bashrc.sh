@@ -20,16 +20,16 @@ alias la='ll -a'
 alias lt='ll -t'
 alias lsize='ll -s'
 alias lrecursive='ll -R'
-alias df='df -h'
-function dirsize {
+alias df='df -h .'
+function dirsize () {
   du --max-depth=1 --block-size=1M --time $1 | sort -nr
 }
-function rec {
+function rec (){
   ls -FClt --color=auto $1 | head -n15
 }
 
 # program utilities
-alias h='history 20'
+alias h='history 30'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias xt='xterm -bg black -fg white &'
 function edit {
@@ -50,15 +50,25 @@ alias modsw='module switch'
 # SLURM utilities
 outputformat='%.8i %.10P %.6D %.6C %.12j %.8u %.8T %.11M %.11l'
 alias sidle="sinfo -s --state=idle"
-function snode {
-  sinfo -l --Node --state=idle -p $1
-}
-function sq {
-  squeue -o"${outputformat}" -p $1
-}
 alias sinteractive='salloc -t 8:00:00 --mem-per-cpu=2000M -N 1'
 alias sme='squeue -o"${outputformat}" -u${USER}'
 alias sjob='scontrol show jobid -d'
+function snode () {
+  if [ "$*" == "" ]
+  then
+    echo "snode requires a partition name as an argument"
+  else
+    sinfo -l --Node --state=idle -p $1
+  fi
+}
+function sq () {
+  if [ "$*" == "" ]
+  then
+    echo "sq requires a partition name as an argument"
+  else
+    squeue -o"${outputformat}" -p $1
+  fi
+}
 
 # load system-specific settings
 source $SYSENVHOME/bashrc.sh

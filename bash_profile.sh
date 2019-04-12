@@ -20,7 +20,7 @@ case $HOSTNAME in
     export SYSENVHOME=${HOME}/sysenv/iris ;;
 esac
 
-export HISTSIZE="100"
+export HISTSIZE="200"
 export HISTFILESIZE="200"
 export HISTCONTROL="ignoreboth"
 
