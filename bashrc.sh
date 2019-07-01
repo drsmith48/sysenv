@@ -28,7 +28,7 @@ alias df='df -h'
 case $OSTYPE in
     (linux*)
         function dirsize {
-            du -m --max-depth=1 | sort -nr
+            du --max-depth=1 -h | sort -hr
         } ;;
     (darwin*)
         function dirsize {
