@@ -28,7 +28,7 @@ alias df='df -h'
 case $OSTYPE in
     (linux*)
         function dirsize {
-            du -m --max-depth=1 | sort -nr
+            du --max-depth=1 -h | sort -hr
         } ;;
     (darwin*)
         function dirsize {
@@ -62,7 +62,7 @@ if [[ $OSTYPE == linux* ]]; then
     alias modsw='module switch'
 
     # SLURM utilities
-    outputformat='%.8i %.10P %.6D %.6C %.12j %.8u %.8T %.11M %.11l'
+    outputformat='%.8i %.10P %.6D %.5C %.20j %.8u %.8T %.9M %.11l'
     alias sidle="sinfo -s --state=idle"
     function snode {
         sinfo -l --Node --state=idle -p $1

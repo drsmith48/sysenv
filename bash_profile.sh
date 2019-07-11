@@ -22,6 +22,10 @@ case $HOSTNAME in
         export SYSENVHOME=${HOME}/sysenv/drsmith ;;
 esac
 
+export HISTSIZE="200"
+export HISTFILESIZE="200"
+export HISTCONTROL="ignoreboth"
+
 # load system-specific default module file
 if [[ $OSTYPE == linux* ]]; then
     export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
