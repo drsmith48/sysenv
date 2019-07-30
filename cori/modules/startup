@@ -1,12 +1,12 @@
 #%Module
 
-prereq intel/18.0.1.163
-prereq craype/2.5.15
-prereq PrgEnv-intel/6.0.4
-prereq cray-mpich/7.7.3
+prereq intel/19.0.3.199
+prereq craype/2.5.18
+prereq PrgEnv-intel/6.0.5
+prereq cray-mpich/7.7.6
 prereq craype-haswell
 
-module load git
+## module load git
 
 set HOME $::env(HOME)
 prepend-path PYTHONPATH ${HOME}/python
