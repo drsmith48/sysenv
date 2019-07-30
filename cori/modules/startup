@@ -1,7 +1,4 @@
 #%Module
-#
-# default modules and paths for Cori computer system
-#
 
 prereq intel/18.0.1.163
 prereq craype/2.5.15
@@ -9,9 +6,9 @@ prereq PrgEnv-intel/6.0.4
 prereq cray-mpich/7.7.3
 prereq craype-haswell
 
-##module switch craype-haswell craype-mic-knl
+module load git
 
 set HOME $::env(HOME)
-module load git
 prepend-path PYTHONPATH ${HOME}/python
+prepend-path PYTHONPATH ${HOME}/pygene
 

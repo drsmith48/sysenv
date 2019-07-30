@@ -1,0 +1,9 @@
+#%Module
+
+module load gene/base
+
+prereq craype-mic-knl
+
+module load cray-petsc-complex-64
+prereq cray-petsc-complex-64/3.8.4.0
+

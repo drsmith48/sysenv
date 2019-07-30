@@ -1,0 +1,16 @@
+#%Module
+
+module load cray-hdf5-parallel
+prereq cray-hdf5-parallel/1.10.2.0
+module load cray-fftw
+prereq cray-fftw/3.3.8.1
+
+set HOME $::env(HOME)
+set GENEHOME ${HOME}/common-m64/genecode
+
+setenv GENEWORK ${HOME}/project-m64
+setenv GENEHOME ${GENEHOME}
+setenv GENESCAN ${GENEHOME}/tools/perl/scanscript
+setenv MACHINE cori
+setenv OMP_NUM_THREADS 1
+
