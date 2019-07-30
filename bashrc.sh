@@ -1,7 +1,7 @@
 # settings (aliases, umask, functions, etc) for non-login shells
 
 # return if non-interactive
-if [[ -n $PS1 ]]; then
+if [[ -n ${PS1} ]]; then
     echo "start ~/sysenv/bashrc.sh"
 else
     return
@@ -15,7 +15,7 @@ export PS1='[\w] \$ '
 export PROMPT_DIRTRIM=3
 
 # determine HPC system
-case $HOSTNAME in
+case ${HOSTNAME} in
     (*sunfire*|*kruskal*|*dawson*|*ganesh*)
         export SYSENVHOME=${HOME}/sysenv/pppl ;;
     (*cori*)
@@ -26,14 +26,14 @@ case $HOSTNAME in
         export SYSENVHOME=${HOME}/sysenv/drsmith ;;
 esac
 
+# load system-specific settings
+[[ -r ${SYSENVHOME}/bashrc.sh ]] && source ${SYSENVHOME}/bashrc.sh
+
 # load system-specific default module file
-if [[ $OSTYPE == linux* ]]; then
+if [[ ${OSTYPE} == linux* ]]; then
     export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
     module load startup
 fi
-
-# load system-specific settings
-[[ -r ${SYSENVHOME}/bashrc.sh ]] && source ${SYSENVHOME}/bashrc.sh
 
 echo "HOSTNAME: ${HOSTNAME}"
 echo "SHELL: ${0}"
@@ -41,9 +41,8 @@ echo "PATH: ${PATH}"
 echo "PYTHONPATH: ${PYTHONPATH}"
 echo "LD_LIBRARY_PATH: ${LD_LIBRARY_PATH}"
 
-alias pyinfo='python --version ; python -c "import sys ; import pprint ; pprint.pprint(sys.path)"'
 
-# file utilities
+# alias/functions
 alias ls='ls -Fh'
 alias ll='ls -l'
 alias la='ll -a'
@@ -52,9 +51,11 @@ alias lsize='ll -s'
 alias lrecursive='ll -R'
 alias df='df -h'
 alias h='history 20'
+alias pyinfo='python --version ; python -c "import sys, pprint; pprint.pprint(sys.path)"'
 function rec {
   lt ${1} | head -n15
 }
+# system-specific alias/functions
 case ${OSTYPE} in
     (linux*)
         function dirsize {
