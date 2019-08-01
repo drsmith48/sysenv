@@ -1,9 +1,7 @@
 #%Module
 
-module load cray-hdf5-parallel
-prereq cray-hdf5-parallel/1.10.2.0
-module load cray-fftw
-prereq cray-fftw/3.3.8.1
+module load cray-hdf5-parallel/1.10.2.0
+module load cray-fftw/3.3.8.2
 
 set HOME $::env(HOME)
 set GENEHOME ${HOME}/common-m64/genecode
