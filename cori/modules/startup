@@ -1,11 +1,12 @@
 #%Module
 
-prereq intel/19.0.3.199
 prereq craype/2.5.18
 prereq cray-libsci/19.02.1
 prereq PrgEnv-intel/6.0.5
 prereq craype-haswell
 prereq cray-mpich/7.7.6
+
+module swap intel/18.0.3.222
 
 ## module load git
 
