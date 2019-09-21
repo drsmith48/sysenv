@@ -24,6 +24,8 @@ case ${HOSTNAME} in
         export SYSENVHOME=${HOME}/sysenv/iris ;;
     (*drsmith*)
         export SYSENVHOME=${HOME}/sysenv/drsmith ;;
+    (*traverse*)
+        export SYSENVHOME=${HOME}/sysenv/traverse ;;
 esac
 
 # load system-specific settings
@@ -40,7 +42,6 @@ echo "SHELL: ${0}"
 echo "PATH: ${PATH}"
 echo "PYTHONPATH: ${PYTHONPATH}"
 echo "LD_LIBRARY_PATH: ${LD_LIBRARY_PATH}"
-
 
 # alias/functions
 alias ls='ls -Fh'
