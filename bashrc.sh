@@ -32,10 +32,10 @@ esac
 [[ -r ${SYSENVHOME}/bashrc.sh ]] && source ${SYSENVHOME}/bashrc.sh
 
 # load system-specific default module file
-if [[ ${OSTYPE} == linux* ]]; then
-    export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
-    module load startup
-fi
+#if [[ ${OSTYPE} == linux* ]]; then
+#    export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
+#    module load startup
+#fi
 
 echo "HOSTNAME: ${HOSTNAME}"
 echo "SHELL: ${0}"
