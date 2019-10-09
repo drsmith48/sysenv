@@ -1,0 +1,5 @@
+#%Module
+
+module load git
+module load anaconda3
+
