@@ -74,7 +74,7 @@ case ${OSTYPE} in
         alias modld='module load'
         alias modunld='module unload'
         alias modsw='module switch'
-        outputformat='%.8i %.20j %.10P %.6D %.5C %.8u %.8T %.10M %.11l %.16N'
+        outputformat='%.8i %.20j %.10P %.6D %.5C %.8u %.8T %.10M %.11l %.20R'
         alias sidle="sinfo -s --state=idle"
         alias sinteractive='salloc -t 8:00:00 --mem-per-cpu=2000M -N 1'
         alias sme='squeue -o"${outputformat}" -u${USER}'

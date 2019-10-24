@@ -1,0 +1,11 @@
+#%Module
+
+module load genebase
+
+set GENEHOME $::env(GENEHOME)
+set MACHINE traverse_cpu
+
+setenv MACHINE ${MACHINE}
+setenv GENEEXEC ${GENEHOME}/bin/gene_${MACHINE}
+setenv GENE_ACC no
+

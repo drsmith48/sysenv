@@ -1,5 +1,8 @@
 #%Module
 
+setenv SCRATCH /scratch/gpfs/dsmith
+setenv TIGRESS /tigress/dsmith
+
 module load git
 module load anaconda3
 
