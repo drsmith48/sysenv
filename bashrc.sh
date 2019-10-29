@@ -1,11 +1,7 @@
 # settings (aliases, umask, functions, etc) for non-login shells
+# loaded for login shells and interactive shells
 
-# return if non-interactive
-if [[ -n ${PS1} ]]; then
-    echo "start ~/sysenv/bashrc.sh"
-else
-    return
-fi
+echo "start ~/sysenv/bashrc.sh"
 
 # try to load /etc/bashrc
 [[ -r /etc/bashrc ]] && source /etc/bashrc
@@ -30,12 +26,6 @@ esac
 
 # load system-specific settings
 [[ -r ${SYSENVHOME}/bashrc.sh ]] && source ${SYSENVHOME}/bashrc.sh
-
-# load system-specific default module file
-#if [[ ${OSTYPE} == linux* ]]; then
-#    export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
-#    module load startup
-#fi
 
 echo "HOSTNAME: ${HOSTNAME}"
 echo "SHELL: ${0}"
