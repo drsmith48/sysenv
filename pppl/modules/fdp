@@ -1,5 +1,4 @@
 #%Module
 
-module load nstx/mdsplus_alpha
-
+module load nstx/mdsplus
 prepend-path PYTHONPATH /u/drsmith/fdp

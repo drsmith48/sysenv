@@ -1,6 +1,5 @@
 #%Module
 
+module load nstx/mdsplus
 module switch anaconda3 anaconda2
-module load nstx/mdsplus_alpha
-
 prepend-path OMFIT_ROOT /u/drsmith/OMFIT-source
