@@ -1,16 +1,23 @@
 #%Module
 
+if { [is-loaded gene/knl] } then { module unload gene/knl }
+if { [is-loaded craype-mic-knl] } then { module unload craype-mic-knl }
+if { ![is-loaded craype-haswell] } then { module load craype-haswell }
+
 module load gene/base
 
-prereq craype-haswell
-
-set HOME $::env(HOME)
 set CRAY_CPU_TARGET $::env(CRAY_CPU_TARGET)
 set PE_ENV $::env(PE_ENV)
 set INTEL_VERSION $::env(INTEL_VERSION)
-set VERSION 3.9.2
 
 setenv PETSC_ARCH arch-${CRAY_CPU_TARGET}-${PE_ENV}-${INTEL_VERSION}
-setenv PETSC_DIR ${HOME}/common-m64/packages/petsc-${VERSION}
-setenv SLEPC_DIR ${HOME}/common-m64/packages/slepc-${VERSION}
+
+setenv CORES_PER_NODE 32
+setenv CPUS_PER_CORE 2
+
+set MACHINE cori_haswell
+set GENEHOME $::env(GENEHOME)
+
+setenv MACHINE ${MACHINE}
+setenv GENEEXEC ${GENEHOME}/bin/gene_${MACHINE}
 

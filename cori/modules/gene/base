@@ -2,6 +2,7 @@
 
 module load cray-hdf5-parallel/1.10.2.0
 module load cray-fftw/3.3.8.2
+module load valgrind
 
 set HOME $::env(HOME)
 set GENEHOME ${HOME}/common-m64/genecode
@@ -9,6 +10,11 @@ set GENEHOME ${HOME}/common-m64/genecode
 setenv GENEWORK ${HOME}/project-m64
 setenv GENEHOME ${GENEHOME}
 setenv GENESCAN ${GENEHOME}/tools/perl/scanscript
-setenv MACHINE cori
 setenv OMP_NUM_THREADS 1
+
+set PETSC_SLEPC_VERSION 3.9.2
+
+setenv PETSC_SLEPC_VERSION ${PETSC_SLEPC_VERSION}
+setenv PETSC_DIR ${HOME}/common-m64/packages/petsc-${PETSC_SLEPC_VERSION}
+setenv SLEPC_DIR ${HOME}/common-m64/packages/slepc-${PETSC_SLEPC_VERSION}
 
