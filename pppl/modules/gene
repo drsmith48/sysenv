@@ -12,19 +12,22 @@ setenv MEMORY_PER_CORE 1600
 
 # compiler
 module load intel/2018.u1
+##module load intel/2019.u3
+
+# intel performance tools
 #set CCHOME $::env(CCHOME)
 #setenv VTUNE_HOME ${CCHOME}/vtune_amplifier
 #prepend-path PATH ${CCHOME}/vtune_amplifier/bin64
 
 # compiler libs
-module load szip/2.1.1
-module load openmpi/3.0.0
+module load szip
+module load openmpi
 
 # MPI libs
-module load petsc_complex/3.9.0
-module load slepc_complex/3.9.0
-module load scalapack/2.0.2
-module load hdf5-parallel/1.10.2
+module load petsc_complex
+module load slepc_complex
+module load scalapack
+module load hdf5-parallel
 
 # tools
 module load ddt/18.2.3

@@ -1,11 +1,7 @@
 # settings (aliases, umask, functions, etc) for non-login shells
+# loaded for login shells and interactive shells
 
-# return if non-interactive
-if [[ -n ${PS1} ]]; then
-    echo "start ~/sysenv/bashrc.sh"
-else
-    return
-fi
+echo "start ~/sysenv/bashrc.sh"
 
 # try to load /etc/bashrc
 [[ -r /etc/bashrc ]] && source /etc/bashrc
@@ -24,23 +20,18 @@ case ${HOSTNAME} in
         export SYSENVHOME=${HOME}/sysenv/iris ;;
     (*drsmith*)
         export SYSENVHOME=${HOME}/sysenv/drsmith ;;
+    (*traverse*)
+        export SYSENVHOME=${HOME}/sysenv/traverse ;;
 esac
 
 # load system-specific settings
 [[ -r ${SYSENVHOME}/bashrc.sh ]] && source ${SYSENVHOME}/bashrc.sh
-
-# load system-specific default module file
-if [[ ${OSTYPE} == linux* ]]; then
-    export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
-    module load startup
-fi
 
 echo "HOSTNAME: ${HOSTNAME}"
 echo "SHELL: ${0}"
 echo "PATH: ${PATH}"
 echo "PYTHONPATH: ${PYTHONPATH}"
 echo "LD_LIBRARY_PATH: ${LD_LIBRARY_PATH}"
-
 
 # alias/functions
 alias ls='ls -Fh'
@@ -73,7 +64,7 @@ case ${OSTYPE} in
         alias modld='module load'
         alias modunld='module unload'
         alias modsw='module switch'
-        outputformat='%.8i %.20j %.10P %.6D %.5C %.8u %.8T %.10M %.11l %.16N'
+        outputformat='%.8i %.20j %.10P %.6D %.5C %.8u %.8T %.10M %.11l %.20R'
         alias sidle="sinfo -s --state=idle"
         alias sinteractive='salloc -t 8:00:00 --mem-per-cpu=2000M -N 1'
         alias sme='squeue -o"${outputformat}" -u${USER}'

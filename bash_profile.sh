@@ -1,7 +1,7 @@
 # environment variables for login shell
 # loaded after /etc/profile at login
 # non-login shells inheret environment variables
-# interactive login shells should source ~/.bashrc
+# interactive shells should source ~/.bashrc
 
 [[ -n $PS1 ]] && echo "start ~/sysenv/bash_profile.sh"
 
