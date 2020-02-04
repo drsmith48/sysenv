@@ -1,4 +1,4 @@
 #%Module
 
-module load nstx/mdsplus
-prepend-path PYTHONPATH /u/drsmith/fdp
+module load nstx/mdsplus_stable
+prepend-path PYTHONPATH $env(HOME)/packages/fdp

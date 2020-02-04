@@ -1,8 +1,6 @@
 #%Module
 
-set HOME $::env(HOME)
 set genetop /p/gene/drsmith
-
 setenv GENEHOME ${genetop}/genecode
 setenv GENEWORK ${genetop}/genecode
 setenv GENEEXEC ${genetop}/genecode/bin/gene_pppl_intel
@@ -33,4 +31,4 @@ module load hdf5-parallel
 module load ddt/18.2.3
 
 prepend-path PYTHONPATH ${genetop}/genecode/tools/python
-prepend-path PYTHONPATH ${HOME}/pygene
+prepend-path PYTHONPATH $env(HOME)/packages/pygene
