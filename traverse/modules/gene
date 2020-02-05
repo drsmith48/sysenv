@@ -1,0 +1,25 @@
+#%Module
+
+set HOME $env(HOME)
+set GENEHOME ${HOME}/gene/genecode
+
+setenv GENEHOME ${GENEHOME}
+setenv GENEWORK ${GENEHOME}
+setenv GENESCAN ${GENEHOME}/tools/perl/scanscript
+setenv GENEBIN ${GENEHOME}/bin
+
+set PETSC_VERSION 3.11.2
+setenv PETSC_DIR ${HOME}/packages/petsc-${PETSC_VERSION}
+setenv SLEPC_DIR ${HOME}/packages/slepc-${PETSC_VERSION}
+
+setenv MACHINE traverse
+
+prepend-path PYTHONPATH ${HOME}/gene/pygene
+
+
+#module load cudatoolkit/10.1
+#module load pgi/19.5/64
+#module load openmpi/pgi-19.5/4.0.2rc1/64
+
+
+
