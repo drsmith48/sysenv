@@ -1,7 +1,9 @@
 #%Module
 
-setenv SCRATCH /scratch/gpfs/dsmith
-
 module load git
 module load anaconda3/2019.10
+
+setenv SCRATCH /scratch/gpfs/dsmith
+
+prepend-path PATH /home/dsmith/packages/pycharm-community-2019.3.2/bin
 
