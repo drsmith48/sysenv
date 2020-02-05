@@ -12,3 +12,6 @@ prepend-path PYTHONPATH ${HOME}/python
 prepend-path PYTHONPATH ${HOME}/packages/pims
 prepend-path MATLABPATH ${HOME}/matlab
 prepend-path IDL_PATH ${HOME}/idl
+
+prepend-path PATH /u/drsmith/local/pycharm-community-2019.3.2/bin
+
