@@ -7,21 +7,21 @@ echo "start ~/sysenv/bashrc.sh"
 [[ -r /etc/bashrc ]] && source /etc/bashrc
 
 umask 022
-export PS1='[\w] \$ '
+export PS1='[\h:\w] \$ '
 export PROMPT_DIRTRIM=3
 
 # determine HPC system
 case ${HOSTNAME} in
-    (*sunfire*|*kruskal*|*dawson*|*ganesh*)
+    (*sunfire*|*kruskal*|*dawson*|*ganesh*|*ellis*)
         export SYSENVHOME=${HOME}/sysenv/pppl ;;
     (*cori*)
         export SYSENVHOME=${HOME}/sysenv/cori ;;
+    (*traverse*)
+        export SYSENVHOME=${HOME}/sysenv/traverse ;;
     (*iris*)
         export SYSENVHOME=${HOME}/sysenv/iris ;;
     (*drsmith*)
         export SYSENVHOME=${HOME}/sysenv/drsmith ;;
-    (*traverse*)
-        export SYSENVHOME=${HOME}/sysenv/traverse ;;
 esac
 
 # load system-specific settings
