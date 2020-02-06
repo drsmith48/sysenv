@@ -10,10 +10,9 @@ setenv MEMORY_PER_CORE 1600
 
 # compiler
 module load intel/2018.u1
-##module load intel/2019.u3
 
 # intel performance tools
-#set CCHOME $::env(CCHOME)
+#set CCHOME $env(CCHOME)
 #setenv VTUNE_HOME ${CCHOME}/vtune_amplifier
 #prepend-path PATH ${CCHOME}/vtune_amplifier/bin64
 
