@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # settings (aliases, umask, functions, etc) for non-login shells
 # loaded for login shells and interactive shells
 
@@ -27,6 +29,7 @@ esac
 # load system-specific settings
 [[ -r ${SYSENVHOME}/bashrc.sh ]] && source ${SYSENVHOME}/bashrc.sh
 
+lsb_release -a
 echo "HOSTNAME: ${HOSTNAME}"
 echo "SHELL: ${0}"
 echo "PATH: ${PATH}"

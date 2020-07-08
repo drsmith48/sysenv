@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
 
 export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
 
 module load startup
 
-source activate py3
+##. ${ANACONDA_DIR}/bin/activate py3

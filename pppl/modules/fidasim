@@ -1,7 +1,6 @@
 #%Module
 
 module load intel/2019.u3
-module load ddt/18.2.3
 
 set fidacode $env(HOME)/fida/FIDASIM4
 

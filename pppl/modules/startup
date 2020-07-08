@@ -1,9 +1,9 @@
 #%Module
 
-module load make/4.2.1
+module load make
 module load git
 module load anaconda3
-module load idl/8.7.2
+module load idl
 module load matlab
 
 set HOME $env(HOME)
