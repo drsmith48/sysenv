@@ -3,4 +3,4 @@ export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
 
 module load startup
 
-source activate py3
+source activate py38
