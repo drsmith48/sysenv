@@ -1,8 +1,7 @@
-# PPPL configuration
+#!/usr/bin/env bash
 
-echo "loading ~/sysenv/pppl/bashrc.sh"
+export MODULEPATH=${SYSENVHOME}/modules:${MODULEPATH}
 
-export $(dbus-launch)
-unset QTDIR
-unset QTINC
-unset QTLIB
+module load startup
+
+##. ${ANACONDA_DIR}/bin/activate py3

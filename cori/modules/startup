@@ -1,16 +1,10 @@
 #%Module
-#
-# default modules and paths for Cori computer system
-#
+
+module load python/3.7-anaconda-2019.10
 
 set HOME $::env(HOME)
-
-module switch craype-haswell craype-mic-knl
-module load python/3.6-anaconda-4.4
-module load git
-
 prepend-path PYTHONPATH ${HOME}/python
-prepend-path IDL_PATH ${HOME}/idl
-prepend-path PATH ${HOME}/local/bin
-prepend-path LD_LIBRARY_PATH ${HOME}/local/lib
-prepend-path INCLUDE_PATH ${HOME}/local/include
+prepend-path PYTHONPATH ${HOME}/pygene
+
+prepend-path PATH /global/homes/d/drsmith/common-m64/packages/pycharm-community-2019.3.2/bin
+

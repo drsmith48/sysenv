@@ -1,0 +1,15 @@
+#%Module
+
+module load intel/2019.u3
+
+set fidacode $env(HOME)/fida/FIDASIM4
+
+setenv FIDACODE ${fidacode}
+setenv FIDAWORK $env(HOME)/fida/work
+setenv FIDALIB $env(HOME)/fida/lib
+
+prepend-path IDL_PATH ${fidacode}
+prepend-path IDL_PATH ${fidacode}/LIB
+prepend-path IDL_PATH ${fidacode}/ASCOT
+prepend-path IDL_PATH ${fidacode}/W7X
+prepend-path IDL_PATH $env(HOME)/fida/lib

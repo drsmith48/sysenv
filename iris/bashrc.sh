@@ -9,7 +9,3 @@ module unload python
 module load conda/iris
 module load pycharm
 
-export $(dbus-launch)
-unset QTDIR
-unset QTINC
-unset QTLIB

@@ -1,21 +1,17 @@
 #%Module
-#
-# default modules and paths for PPPL computer system
-#
 
-set HOME $::env(HOME)
-set SYSENVHOME $::env(SYSENVHOME)
-
-module load make/4.2.1
+module load make
 module load git
 module load anaconda3
-module load idl/8.7.2
+module load idl
+module load matlab
 
-prepend-path PATH ${HOME}/local/bin
-prepend-path PATH ${SYSENVHOME}/bin
-prepend-path LD_LIBRARY_PATH ${HOME}/local/lib
-prepend-path INCLUDE_PATH ${HOME}/local/include
+set HOME $env(HOME)
 
 prepend-path PYTHONPATH ${HOME}/python
-
+prepend-path PYTHONPATH ${HOME}/packages/pims
+prepend-path MATLABPATH ${HOME}/matlab
 prepend-path IDL_PATH ${HOME}/idl
+
+prepend-path PATH /u/drsmith/local/pycharm-community-2019.3.2/bin
+
